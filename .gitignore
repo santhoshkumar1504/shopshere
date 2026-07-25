@@ -22,8 +22,6 @@ db.sqlite3-journal
 # Static Files
 staticfiles/
 
-# Media Files (optional - remove this if you want to upload media)
-media/
 
 # Collected Static Files
 static_root/
