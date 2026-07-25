@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    transition: 0.3s;
+}
+
+/* Navbar Style */
+/* background: #F8FAFC; */
+/* Primary: #2563EB
+Secondary: #1E3A8A
+Accent: #38BDF8
+Text: #0F172A */
+
+.navbar {
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background: linear-gradient(90deg, #2563Eb, #1E3A8A);
+
+    .navbar-brand {
+        color: whitesmoke;
+        font-family: "Playwrite NG Modern", cursive;
+        font-optical-sizing: auto;
+        font-style: bold;
+        font-weight:bolder;
+        font-size: 20px;
+        span {
+            font-family: "Playwrite NG Modern", cursive;
+            font-optical-sizing: auto;
+            font-style: bold;
+            font-size: 20px;
+            font-weight: bolder;
+            background: linear-gradient(to right, rgb(255, 217, 0),#ff6b02);
+            color: transparent;
+            background-clip: text;
+        }
+    }
+
+    .nav-item {
+        .nav-link {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+    }
+
+}
+
+button{
+    &:hover{
+        transform: scale(1.025);
+    }
+}
+
+
+footer{
+    background-color: transparent;
+    display: flex;
+    height: 6vh;
+    justify-content: center;
+    align-items: center;
+}

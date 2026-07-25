@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Complete Profile</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    {% if messages %}
+        {% for i in messages %}
+          <p class="msg">{{i}}</p>
+        {% endfor %}
+    {% endif %}
+
+
+    <h1 class="title">Complete Profile</h1>
+    <div class="form-container py-3">
+    <form action="" method="POST" enctype="multipart/form-data" class="form1">
+        {% csrf_token %}
+
+        <label for="phone" class="form-label">Phone</label>
+        <input class="form-control" type="text" name="phone" id="phone" required>
+        
+        <label for="address" class="form-label mt-2">Address</label>
+        <textarea class="form-control" name="address" id="address" required></textarea>
+
+        <label for="pincode" class="form-label mt-2">Pincode</label>
+        <input class="form-control" type="text" name="pincode" id="pincode" required>
+
+
+        <label for="pic" class="form-label mt-2">Profile Picture</label>
+        <input class="form-control" type="file" name="pic" id="pic">
+       
+        <button type="submit" class="btn btn-success mt-3">Complete Profile</button>
+    </form>
+   </div>
+    </div>
+{% endblock %}

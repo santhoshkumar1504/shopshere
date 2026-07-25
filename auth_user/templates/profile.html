@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+<title>Profile</title>
+<link rel="stylesheet" href="{% static 'styles/formstyle.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container profile">
+  {% if messages %}
+  {% for i in messages %}
+  <p>{{i}}</p>
+  {% endfor %}
+  {% endif %}
+
+
+  <h1 class="mb-3 title">Profile</h1>
+  <div class="row profile-container">
+    <div class="profilebox col-md-6 profile-bg">
+      {% if incomplete %}
+      <img src="https://img.icons8.com/pulsar-line/1200/image.jpg" alt="" class="profile-pic">
+      {% else %}
+      <img src="{{data.pic.url}}" alt="" class="profile-pic">
+      {% endif %}
+    </div>
+    <div class="profilebox profile-details col-md-6">
+      <p><b>First Name: </b>{{request.user.first_name|default:'NA'}}</p>
+      <p><b>Last Name: </b>{{request.user.last_name|default:'NA'}}</p>
+      <p><b>User Name: </b>{{request.user.username}}</p>
+      <p><b>Email: </b>{{request.user.email|default:'NA'}}</p>
+      {% if incomplete %}
+      <button class="btn btn-info"><a href="{% url 'completeProfile' %}" class="text-decoration-none text-dark">Complete
+          Profile</a></button>
+      {% else %}
+      <p><b>Phone: </b>{{data.phone}}</p>
+      <p><b>Address: </b>{{data.address}}</p>
+      <p><b>Pincode: </b>{{data.pincode}}</p>
+      {% endif %}
+    </div>
+
+
+    <div class="btn-group my-2">
+      <a href="{% url 'updateProfile' %}" class="upbtn"><button class="upbtn">Update Profile</button></a>
+      <button type="button" class="delbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete
+        Profile</button>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Are you sure you want to delete this user?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="{% url 'deleteProfile' %}"><button class="btn btn-danger"><i
+          class="fa-regular fa-trash-can me-1"></i>Delete Profile</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="{% url 'resetPasw' %}" class="btn btn-outline-primary text-center my-2">Reset Password</a>
+
+  </div>
+
+</div>
+
+{% endblock %}

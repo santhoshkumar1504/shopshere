@@ -1,0 +1,54 @@
+.checkout-container{
+    padding: 1rem 0px;
+    .title{
+        margin: 1rem auto;
+        padding: 1rem;
+        text-align: center;
+        color: #1E3A8A;
+    }
+    .checkout-table{
+        th{
+            background-color: #1E3A8A;
+            color: white;
+            text-align: center;
+        }
+        td{
+            text-align: center;
+        }
+        img{
+            margin-left: 0;
+            width: 80px;
+            height: 80px;
+        }
+    }
+    .addr-display{
+        .head{
+            color: #1E3A8A;
+        }
+        .group-addr{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+}
+
+
+
+@media (max-width:576px) {
+    .addr-display{
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .head{
+            color: #1E3A8A;
+        }
+        .group-addr{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+}

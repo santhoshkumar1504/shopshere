@@ -1,0 +1,135 @@
+/* Login, Register, forget, reset password */
+
+.container{
+    width: 100%;
+    min-height:80vh;
+    .msg{
+        font-weight: bold;
+        text-align: center;
+    }
+}
+    .form-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        .box1{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            img{
+                width: 30vw;
+            }
+        }
+    }
+    .form-container-pasw{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 80vh;
+        form{
+            width: 400px;
+        }
+    }
+.title{
+    text-align: center;
+    color: #2563EB;
+}
+.form1{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+}
+
+
+
+
+
+/* Profile style */
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .profile-container{
+        background:radial-gradient(#fcfcfc,#f7faff);
+        border-radius: 5px;
+        padding: 30px 20px;
+        box-shadow: 0px 0px 8px gray;
+    }
+    .profilebox{
+        .profile-pic
+        {
+            width: 200px;
+            box-shadow: 0px 0px 4px gray;
+            border-radius: 50px 50px 50px 50px/ 50px 50px 50px 50px;
+        }
+    }
+    .profile-details{
+        font-size: 17px;
+        margin-top: 20px;
+        justify-content: start;
+        align-items: start;
+    }
+    .btn-group{
+        display: flex;
+        justify-content: space-around;
+        a{
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        button{
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: none;
+        }
+        .upbtn{
+            background-color: gold;
+        }
+        .delbtn{
+            color: white;
+            background-color: red;
+        }
+    }
+}
+
+
+
+    .profile-bg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.modal{
+    z-index: 10001;
+}
+
+
+
+/* Login form Style 
+
+
+.loginform{
+    background-color: #dfe7f8; 
+    padding: 20px;
+    border-radius: 20px;
+    input{
+        border: 2px solid #2563EB;
+        background-color: transparent;
+        border-bottom: 2px solid #2563EB;
+        &:focus{
+            border:none;
+            border-bottom: 2px solid #2563EB;
+            background-color: transparent;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+
+*/
+
+

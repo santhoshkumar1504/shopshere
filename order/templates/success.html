@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Order Success</title>
+    <link rel="stylesheet" href="{% static 'styles/success.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container successpage">
+        <img src="{% static 'images/success.png' %}" alt="">
+        <div class="text-success fw-bold fs-5">Total Amount: <i class="fa-solid fa-indian-rupee-sign"></i>{{order.total_amt}}</div>
+        <div>Shipping Status: <span class="text-primary fw-bold">{{order.status}}</span></div>
+        <div class="my-1 fw-bold fs-5">Your Order is Successfull.  Thank you for your order</div>   
+
+        <div class="addr-group my-2">
+            <div class="fw-bold">Address Details:</div>
+            <div>{{order.address.address}}, {{order.address.city}}, {{order.address.state}} - {{order.address.pinCode}}</div>
+        </div>
+        <a href="{% url 'orders' %}" class="btn btn-success my-2">View my Orders</a>
+    </div>
+
+{% endblock %}

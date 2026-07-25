@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{product.pname}}</title>
+<link rel="stylesheet" href="{% static 'styles/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container detail-container">
+    <div class="row py-5">
+        <div class="col-lg-6">
+            <img src="{{product.pimage.url}}" alt="no_image" style="width: 400px; height: 400px;">
+        </div>
+        <div class="col-lg-6 mt-2 pdetail-main">
+            <h1>{{product.pname}}</h1>
+            <p class="my-2">{{product.pdesc}}</p>
+
+            <div class="detail-group mt-2">
+                <div>
+                    Price:<strong style="font-size: 19px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                            <path
+                                d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4z" />
+                        </svg>{{product.price}}</strong>
+                </div>
+                <div>
+                    <p class="h5">Category: <strong class="fs-5 text-muted">{{product.category}}</strong></p>
+                </div>
+            </div>
+
+            <div>
+
+            </div>
+
+            <h2 class="h5 my-2">In Stock: {{product.stock}}</h2>
+            <div class="my-2 mt-3 d-flex">
+                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-success"><i class="fa-solid fa-cart-shopping me-1"></i>Add to Cart</a>
+                <a href="" class="btn btn-dark ms-3"><i class="fa-solid fa-credit-card me-1"></i>Buy Now</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row rel-main">
+        {% if related_product %}
+            <h2 style="color: #1E3A8A;">Related Products</h2>
+        {% for i in related_product %}
+            <div class="col-sm-5 col-lg-3 rel-cart mt-2">
+                <div class="maincart card">
+                <img src="{{i.pimage.url}}" alt="" class="card-img-top">
+                <div class="mt-1 fw-bold">{{i.pname}}</div>
+                <div class="mt-1"><i class="fa-solid fa-indian-rupee-sign"></i>{{i.price}}</div>
+                <a href="{% url 'productDetail' i.id %}" class="stretched-link"></a>
+                </div>
+            </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

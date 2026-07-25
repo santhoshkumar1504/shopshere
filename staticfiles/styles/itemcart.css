@@ -1,0 +1,24 @@
+#cartitem{
+    h1{
+        color: #2563Eb;
+    }
+    table{
+        border-radius: 10px;
+        tr{
+            th{
+                background-color: #2563Eb;
+                color: white;
+            }
+            .td-img{
+                img{
+                    width: 100px;
+                    height: 70px;
+                }
+            }
+            .btns{
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

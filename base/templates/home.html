@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="home-container">
+    <form action="" class="filter-container">
+        {% for i in category %}
+            <input type="submit" value="{{i}}" name="category">
+        {% endfor %}
+        <a href="{% url 'home' %}"><i class="fa-solid fa-store me-1"></i>All Products</a>
+    </form>
+
+    <div class="row py-2 product-main-container">
+        {% if data %}
+            {% for i in data %}
+            <div class="col-md-3 product-card">
+            <div class="card pcard">
+                <img src="{{i.pimage.url}}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h1>{{i.pname}}</h1>
+                    <div class="text-justify" style="font-size: 15px;">{{i.pdesc|truncatewords:8}}</div>
+                    <div class="my-1">Rs. <strong style="font-size: 18px;">{{i.price}}</strong></div>   
+                   
+                    <a href="{% url 'productDetail' i.id %}" class="stretched-link text-decoration-none text-dark"></a>
+                </div>
+                <div class="btn-groups-card mb-3">
+                    <a href="" class="btn btn-dark">Buy Now</a>
+                    <a href="{% url 'add_to_cart' i.id %}" class="btn btn-success"><i class="fa-solid fa-cart-shopping me-1"></i>Add to Cart</a>
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="dmsg">
+                <img src="https://img.magnific.com/premium-vector/vector-illustration-about-concept-no-items-found-no-results-found_675567-6643.jpg?semt=ais_hybrid&w=740&q=80" alt="">
+                <h2 class="text-center">No Product Found</h2>
+            </div>
+        {% endif %}
+
+
+    </div>
+
+
+    </div>
+{% endblock %}

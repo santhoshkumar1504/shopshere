@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Forget Password</title>
+    <link rel="stylesheet" href="{% static 'styles/formstyle.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+    {% if messages %}
+        {% for i in messages %}
+          <p class="msg">{{i}}</p>
+        {% endfor %}
+    {% endif %}
+
+    <div class="form-container-pasw row">
+        <h1 class="title col-12 mb-3">Forget Password</h1>
+        <form action="" method="POST" class="form1">
+            {% csrf_token %}
+            {% if new %}
+                <label for="newpasw"  class="form-label mt-2">New Password</label>
+                <input type="password" name="newpasw" class="form-control" id="newpasw">
+    
+                <label for="cnewpasw" class="form-label mt-2">Confirm New Password</label>
+                <input type="password" name="cnewpasw" class="form-control" id="cnewpasw">
+            {% else %}
+                <label for="uname" class="form-label fw-bold mb-2">Username</label>
+                <input type="text" name="uname" class="form-control" id="uname">
+            {% endif %}
+            <button type="submit" class="btn btn-success mt-3">Confirm</button>
+        </form>
+    </div>
+
+     </div>
+{% endblock %}

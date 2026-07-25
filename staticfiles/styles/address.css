@@ -1,0 +1,53 @@
+.address-container{
+    padding:1rem auto;
+    h1{
+        padding: 1rem auto;
+        text-align: center;
+        font-weight: bold;
+        color: black;
+    }
+    .form-address{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1rem;
+        label{
+            font-weight: bold;
+            margin-top: 8px;
+            display: block;
+        }
+        input[type='text'],input[type='email'],textarea{
+            width: 100%;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid gray;
+            &:focus{
+                border: none;
+                outline: 2px solid rgb(39, 209, 247);
+            }
+        }
+        input[type='checkbox']
+        {   
+            width: 20px;
+            height: 20px;
+            &:focus{
+                border: none;
+                outline: 2px solid rgb(39, 209, 247);
+            }
+        }
+    }
+
+}
+.address-cart{
+    background: linear-gradient(to right, white,rgb(229, 243, 255));
+}
+
+
+
+
+.ordered_product{
+    background-color: aliceblue;
+    &:hover{
+        box-shadow: 0px 0px 8px gray;
+    }
+}

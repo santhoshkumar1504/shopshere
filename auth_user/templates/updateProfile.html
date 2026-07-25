@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Update Profile</title>
+<link rel="stylesheet" href="{% static 'styles/formstyle.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    {% if messages %}
+        {% for i in messages %}
+          <p class="msg">{{i}}</p>
+        {% endfor %}
+    {% endif %}
+
+    <h1 class="title my-2">Update Profile</h1>
+    <div class="form-container py-3">
+    <form action="" method="POST" enctype="multipart/form-data" class="form1">
+        {% csrf_token %}
+        <label for="fname" class="form-label mt-2">First Name</label>
+        <input type="text" class="form-control" name="fname" id="fname" value="{{request.user.first_name}}" required>
+
+        <label for="lname" class="form-label mt-2">Last Name</label>
+        <input type="text" class="form-control" name="lname" id="lname" value="{{request.user.last_name}}" required>
+
+        <label for="email" class="form-label mt-2">Email</label>
+        <input type="email" class="form-control" name="email" id="email" value="{{request.user.email}}" required>
+
+        <label for="phone" class="form-label mt-2">Phone</label>
+        <input type="text" class="form-control" name="phone" id="phone" value="{{data.phone}}" required>
+
+        <label for="address" class="form-label mt-2">Address</label>
+        <textarea name="address" class="form-control" id="address" required rows="4" cols="25">{{data.address}}</textarea>
+
+        <label for="pincode" class="form-label mt-2">Pincode</label>
+        <input type="text" class="form-control" name="pincode" id="pincode" value="{{data.pincode}}" required>
+
+
+        <label for="pic" class="form-label mt-2">Profile Picture</label>
+        <input type="file" class="form-control" name="pic" id="pic">
+       
+        <button type="submit" class="btn btn-info mt-3">Update</button>
+    </form>
+
+    </div>
+   
+</div>
+{% endblock %}

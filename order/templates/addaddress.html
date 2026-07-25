@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Add Address</title>
+    <link rel="stylesheet" href="{% static 'styles/address.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container address-container">
+        <h1>Add Address</h1>
+        <form action="" class="row form-address" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-info">Add Address</button>
+        </form>
+    </div>
+
+{% endblock %}
