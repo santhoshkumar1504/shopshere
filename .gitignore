@@ -16,12 +16,12 @@ ENV/
 # Django
 *.log
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
+
 
 # Static Files
 staticfiles/
 
+# Media Files (optional - remove this if you want to upload media)
 
 # Collected Static Files
 static_root/
