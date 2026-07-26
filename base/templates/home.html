@@ -20,7 +20,7 @@
             {% for i in data %}
             <div class="col-md-3 product-card">
             <div class="card pcard">
-                <img src="{% static 'images/' %}{{ i.pimage }}" class="card-img-top">
+                <img src="{% static 'images/media/' %}{{ i.pimage }}" class="card-img-top">
                 <div class="card-body">
                     <h1>{{i.pname}}</h1>
                     <div class="text-justify" style="font-size: 15px;">{{i.pdesc|truncatewords:8}}</div>

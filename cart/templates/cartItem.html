@@ -35,7 +35,7 @@
             <tbody>
                 {% for i in cartdata %}
                 <tr>
-                    <td class="td-img"><img src="{% static 'images/' %}{{i.product.pimage.url}}" class="card-img-left"></td>
+                    <td class="td-img"><img src="{% static 'images/media/' %}{{i.product.pimage.url}}" class="card-img-left"></td>
                     <td>{{i.product.pname}}</td>
                     <td class="text-center"><i class="fa-solid fa-indian-rupee-sign"></i>{{i.product.price}}</td>
                     <td class="text-center" class="btns">

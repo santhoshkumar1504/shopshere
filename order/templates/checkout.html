@@ -33,7 +33,7 @@
                 <tbody>
                     {% for i in items %}
                     <tr>
-                        <td><img src="{% static 'images/' %}{{i.product.pimage.url}}" class="card-img-left"></td>
+                        <td><img src="{% static 'images/media/' %}{{i.product.pimage.url}}" class="card-img-left"></td>
                         <td>{{i.product.pname}}</td>
                         <td><i class="fa-solid fa-indian-rupee-sign"></i>{{i.product.price}}</td>
                         <td>
