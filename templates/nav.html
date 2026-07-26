@@ -44,7 +44,7 @@
         </li>
       </ul>
       {% if request.user.is_authenticated %}
-      <form class="d-flex ms-2" action="http://127.0.0.1:8000/base/">
+      <form class="d-flex ms-2" action="{% url 'home' %}">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
         <button class="btn btn-warning" type="submit">Search</button>
       </form>
