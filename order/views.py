@@ -80,7 +80,7 @@ def checkout(request):
     if not addr:
         addr=AddressModel.objects.filter(host=request.user).order_by('-created_at').first()
 
-    all_address=AddressModel.objects.all()
+    all_address=AddressModel.objects.filter(host=request.user)
     items=CartModel.objects.filter(host=request.user)
     grand_total=sum(i.total_price for i in items)
     return render(request,'checkout.html',{'items':items,'addr':addr,'grand_total':grand_total,'all_address':all_address,'addr':addr})
