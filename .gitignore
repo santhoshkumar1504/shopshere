@@ -18,13 +18,6 @@ ENV/
 local_settings.py
 
 
-# Static Files
-staticfiles/
-
-# Media Files (optional - remove this if you want to upload media)
-
-# Collected Static Files
-static_root/
 
 # Migrations (Optional)
 # Uncomment ONLY if you don't want to track migrations
