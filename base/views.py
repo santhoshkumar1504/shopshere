@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from product.models import ProductModel, CategoryModel
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='login_')
 def home(request):
     if 'q' in request.GET:
         q=request.GET['q']
@@ -23,7 +25,7 @@ def home(request):
     return render(request,'home.html',{'data':data,'category':Category})
 
 
-
+@login_required(login_url='login_')
 def productDetail(request,id):
     product=ProductModel.objects.get(id=id)
     related_product=ProductModel.objects.filter(category=product.category).exclude(id=id).order_by('?')[:4]
