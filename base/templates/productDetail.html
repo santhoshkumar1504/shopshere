@@ -10,7 +10,7 @@
 <div class="container detail-container">
     <div class="row py-5">
         <div class="col-lg-6">
-            <img src="{{product.pimage.url}}" alt="no_image" style="width: 400px; height: 400px;">
+            <img src="{% static 'images/' %}{{product.pimage.url}}" class="card-img-top">
         </div>
         <div class="col-lg-6 mt-2 pdetail-main">
             <h1>{{product.pname}}</h1>
@@ -49,7 +49,7 @@
         {% for i in related_product %}
             <div class="col-sm-5 col-lg-3 rel-cart mt-2">
                 <div class="maincart card">
-                <img src="{{i.pimage.url}}" alt="" class="card-img-top">
+                <img src="{% static 'images/' %}{{it.pimage.url}}" class="card-img-top">
                 <div class="mt-1 fw-bold">{{i.pname}}</div>
                 <div class="mt-1"><i class="fa-solid fa-indian-rupee-sign"></i>{{i.price}}</div>
                 <a href="{% url 'productDetail' i.id %}" class="stretched-link"></a>
